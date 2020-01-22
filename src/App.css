@@ -15,6 +15,13 @@
   height: 50px;
 }
 
+.title {
+  font-size: 17px;
+  margin: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .day {
   margin-bottom: 10px;
 }

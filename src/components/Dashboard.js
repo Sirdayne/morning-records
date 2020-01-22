@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
 import moment from 'moment'
+import Title from './Title'
 
 function Dashboard() {
     const dates = getDates()
     return (
         <div className="dashboard">
-            Dashboard
+            <Title name="Dashboard"></Title>
             {
                 dates.map(date =>
                     <div className="day" key={date}>{date}</div>
