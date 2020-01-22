@@ -9,7 +9,10 @@ function Dashboard() {
             <Title name="Dashboard"></Title>
             {
                 dates.map(date =>
-                    <div className="day" key={date}>{date}</div>
+                    <div className="day" key={date.date}>
+                        {date.date} -
+                        {date.weight}
+                    </div>
                 )
             }
         </div>
