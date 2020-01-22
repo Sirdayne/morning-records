@@ -1,9 +1,11 @@
 import React from 'react'
 import './App.css'
+
 import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
-import Home from './pages/Home'
+import Today from './pages/Today'
 import Edit from './pages/Edit'
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -17,7 +19,7 @@ function App() {
         <Header></Header>
         <Router>
             <div className="links">
-                <Link to="/">Home</Link>
+                <Link to="/">Today</Link>
                 <Link to="/dashboard">Dashboard</Link>
                 <Link to="/edit">Edit</Link>
             </div>
@@ -29,7 +31,7 @@ function App() {
                     <Edit />
                 </Route>
                 <Route path="/">
-                    <Home />
+                    <Today />
                 </Route>
             </Switch>
         </Router>

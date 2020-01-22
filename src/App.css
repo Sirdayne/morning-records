@@ -21,8 +21,8 @@
 }
 
 .title {
-  font-size: 17px;
-  margin: 15px;
+  font-size: 22px;
+  margin: 25px;
   font-weight: bold;
   text-align: center;
 }
@@ -44,4 +44,13 @@
 
 .day-weight, .use-input {
   margin-left: 20px;
+}
+
+.today {
+  text-align: center;
+}
+
+.today input {
+  padding: 10px;
+  width: 100px;
 }
