@@ -12,7 +12,7 @@ function Edit() {
                 dates.map(date =>
                     <div className="day" key={date.date}>
                         {date.date}
-                        <UseInput initVal={date.weight} />
+                        <UseInput day={date} />
                     </div>
                 )
             }

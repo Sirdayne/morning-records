@@ -7,7 +7,7 @@ function getDates() {
     for (let i = 0; i <= PERIOD_DAYS; i++) {
         dates.push({
             date: initDate.format('DD/MM/YYYY'),
-            weight: 0
+            weight: localStorage.getItem(initDate.format('DD/MM/YYYY')) ? localStorage.getItem(initDate.format('DD/MM/YYYY')) : 0
         })
         initDate.add(1, 'days')
     }

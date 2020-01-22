@@ -10,8 +10,8 @@ function Dashboard() {
             {
                 dates.map(date =>
                     <div className="day" key={date.date}>
-                        {date.date} -
-                        {date.weight}
+                        {date.date}
+                        <span className="day-weight">{date.weight}</span>
                     </div>
                 )
             }
