@@ -1,13 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 function useInput(props) {
-    const { day } = props
-    const { weight, date } = day
+    const { record } = props
+    const { weight } = record
     const [value, setValue] = useState(weight)
+
+    useEffect(() => {
+        setValue(weight)
+    }, [weight])
+
     return <input value={value}
                   onChange={e => {
                       setValue(e.target.value)
-                      localStorage.setItem(date, e.target.value)
                     }
                   }
                   type='number'

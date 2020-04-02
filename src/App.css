@@ -54,3 +54,16 @@
   padding: 10px;
   width: 100px;
 }
+
+.day input {
+  width: 80px;
+}
+
+.btn {
+  padding: 2px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  background: rgba(0,0,0,0);
+  border: 1px solid #fff;
+  color: #fff;
+}

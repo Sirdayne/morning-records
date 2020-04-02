@@ -19,10 +19,14 @@ function App() {
     const [ dates, setDates ] = useState([])
 
     useEffect(() => {
+        fetchData()
+    }, [])
+
+    const fetchData = () => {
         fetchDates().then(res => {
             setDates(res)
         })
-    }, [])
+    }
 
     return (
         <div className="main">
@@ -38,10 +42,10 @@ function App() {
                         <Dashboard dates={dates} />
                     </Route>
                     <Route path="/edit">
-                        <Edit dates={dates} />
+                        <Edit dates={dates} fetch-data={fetchData}/>
                     </Route>
                     <Route path="/">
-                        <Today dates={dates} />
+                        <Today dates={dates} fetch-data={fetchData}/>
                     </Route>
                 </Switch>
             </Router>

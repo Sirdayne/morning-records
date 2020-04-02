@@ -12,7 +12,8 @@ function Edit(props) {
                 dates.map(date =>
                     <div className="day" key={date.date}>
                         {date.date}
-                        <UseInput day={date} />
+                        <UseInput record={date} />
+                        <button className="btn">update</button>
                     </div>
                 )
             }
