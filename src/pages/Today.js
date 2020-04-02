@@ -3,7 +3,8 @@ import Title from '../components/Title'
 import moment from 'moment'
 import UseInput from '../components/UseInput'
 
-function Today() {
+function Today(props) {
+
     const momentToday = moment().format('DD/MM/YYYY')
     const today = {
         date: momentToday,

@@ -1,9 +1,9 @@
 import React from 'react'
 import Title from '../components/Title'
-import { getDates } from '../store/Dates'
 
-function Dashboard() {
-    const dates = getDates()
+function Dashboard(props) {
+    const { dates } = props
+
     return (
         <div className="dashboard">
             <Title name="Dashboard"></Title>

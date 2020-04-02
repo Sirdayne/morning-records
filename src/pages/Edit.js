@@ -1,10 +1,10 @@
 import React from 'react'
 import Title from '../components/Title'
-import { getDates } from '../store/Dates'
 import UseInput from '../components/UseInput'
 
-function Edit() {
-    const dates = getDates()
+function Edit(props) {
+    const { dates } = props
+
     return (
         <div className="dashboard">
             <Title name="Edit Records"></Title>

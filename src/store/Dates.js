@@ -1,17 +1,38 @@
 import moment from 'moment';
+import http from '../services/http'
 
-function getDates() {
-    const dates = []
+let dates = []
+let records = []
+
+const fetchDates = () => {
+    records = []
+    return http.get('/records').then(res => {
+        if (res && res.data && res.data.length > 0) {
+            records = res.data
+            return setDates()
+        }
+    })
+}
+
+const setDates = () => {
+    dates = []
     let initDate = moment('2020-01-01')
     const PERIOD_DAYS = moment().add(15, 'days').diff(initDate, 'days')
     for (let i = 0; i <= PERIOD_DAYS; i++) {
-        dates.push({
-            date: initDate.format('DD/MM/YYYY'),
-            weight: localStorage.getItem(initDate.format('DD/MM/YYYY')) ? localStorage.getItem(initDate.format('DD/MM/YYYY')) : 0
-        })
+        let found = records.find(record => record.date === initDate.format('DD/MM/YYYY'))
+        if (found) {
+            dates.push(found)
+        } else {
+            dates.push({
+                id: null,
+                date: initDate.format('DD/MM/YYYY'),
+                weight: 0,
+                trained: false
+            })
+        }
         initDate.add(1, 'days')
     }
     return dates
 }
 
-export { getDates };
+export { fetchDates }
