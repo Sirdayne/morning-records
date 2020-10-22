@@ -42,10 +42,10 @@ function App() {
                         <Dashboard dates={dates} />
                     </Route>
                     <Route path="/edit">
-                        <Edit dates={dates} fetch-data={fetchData}/>
+                        <Edit dates={dates} fetchData={fetchData}/>
                     </Route>
                     <Route path="/">
-                        <Today dates={dates} fetch-data={fetchData}/>
+                        <Today dates={dates} fetchData={fetchData}/>
                     </Route>
                 </Switch>
             </Router>

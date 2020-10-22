@@ -3,7 +3,7 @@ import Title from '../components/Title'
 import UseInput from '../components/UseInput'
 
 function Edit(props) {
-    const { dates } = props
+    const { dates, fetchData } = props
 
     return (
         <div className="dashboard">
@@ -12,8 +12,7 @@ function Edit(props) {
                 dates.map(date =>
                     <div className="day" key={date.date}>
                         {date.date}
-                        <UseInput record={date} />
-                        <button className="btn">update</button>
+                        <UseInput record={date} fetchData={fetchData}/>
                     </div>
                 )
             }

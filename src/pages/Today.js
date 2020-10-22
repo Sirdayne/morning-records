@@ -4,7 +4,7 @@ import moment from 'moment'
 import UseInput from '../components/UseInput'
 
 function Today(props) {
-    const { dates } = props
+    const { dates, fetchData } = props
 
     const [ today, setToday ] = useState({
         id: null,
@@ -24,7 +24,7 @@ function Today(props) {
         <div className="today">
             <Title name="Today"></Title>
             <h2>{today.date}</h2>
-            <UseInput record={today} />
+            <UseInput record={today} fetchData={fetchData}/>
         </div>
     );
 }
