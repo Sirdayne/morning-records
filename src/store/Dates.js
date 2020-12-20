@@ -6,6 +6,7 @@ const fetchDates = () => {
     return http.get('/records').then(res => {
                 if (res && res.data && res.data.length > 0) {
                     records = res.data
+                    console.log(records)
                     return setDates(records)
                 }
             })
@@ -16,7 +17,7 @@ const setDates = (records) => {
     let initDate = moment('2020-01-01')
     const PERIOD_DAYS = moment().add(15, 'days').diff(initDate, 'days')
     for (let i = 0; i <= PERIOD_DAYS; i++) {
-        let found = records.find(record => record.date === initDate.format('DD/MM/YYYY'))
+        let found = records.find(record => moment(record.date).format('DD/MM/YYYY') === initDate.format('DD/MM/YYYY'))
         if (found) {
             dates.push(found)
         } else {

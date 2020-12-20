@@ -7,8 +7,7 @@ function Today(props) {
     const { dates, fetchData } = props
 
     const [ today, setToday ] = useState({
-        id: null,
-        date: moment().format('DD/MM/YYYY'),
+        date: moment().format('MM-DD-YYYY'),
         weight: 0,
         trained: false
     })
